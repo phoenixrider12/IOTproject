@@ -1,0 +1,180 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm" style="max-width: 1200px">
+      <h1><b>Gas Sensor Predictions</b></h1>
+      <hr />
+      <br />
+      <h3><b>About the project:</b></h3>
+      <h6>
+        In this project, the development of a disaster preparedness and
+        forecasting system is presented, which integrates real-time sensor data
+        and time-sensitive computing to mitigate the effects of disasters. The
+        system follows a service-oriented IoT architecture and focuses on early
+        warning through machine learning (ML) algorithms implemented on a cloud
+        server. It incorporates a triple modular redundancy fault tolerance
+        scheme for the sensor network to ensure the availability of reliable and
+        fault-free data for accurate predictions. The ML algorithm is applied to
+        three sensor parameters (MQ4, MQ7, and force sensing resistor) on the
+        AWS cloud, achieving low absolute error percentages between actual and
+        predicted values, thus demonstrating the system's accuracy.
+        <br /><br />
+        The project not only provides real-time monitoring and warning but also
+        serves as a decision support system for disaster mitigation. It
+        leverages IoT concepts to track plant behavior, with a strong emphasis
+        on the development of a robust sensor network. Fault tolerance is a
+        critical aspect, especially in safety-critical IoT applications. The
+        proposed system offers a layer-level IoT architecture suitable for
+        underground mines, where sensor data from various nodes are sent to a
+        gateway node, and from there, to the cloud server for ML-based
+        prediction and decision making. A fault-tolerant mechanism, employing
+        triple modular redundancy, ensures uninterrupted, fault-free data
+        transmission to the cloud, ultimately facilitating accurate predictions
+        of plant conditions.
+        <br /><br />
+        The primary contributions of this work include the design of a sensor
+        network using Raspberry Pi gateway nodes, the
+        development of a layer-level IoT architecture for EWS, and the use of
+        AWS cloud for sensor data processing and prediction. Additionally, a
+        fault-tolerant sensor network is designed to enhance reliability in data
+        transmission and prediction. This project addresses the critical need
+        for early warning and decision support systems in disaster preparedness,
+        offering a reliable and fault-tolerant IoT-based solution for predictive
+        monitoring in various applications, with a particular focus on
+        underground mines.
+      </h6>
+
+      <br />
+      <h3><b>Hardware Components used:</b></h3>
+      <hr />
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  height="100px"
+                  width="100px"
+                  src="https://th.bing.com/th/id/OIP.CANrKhsjUQrueWwu3urYAwHaDg?pid=ImgDet&rs=1"
+                  alt=""
+                />
+              </td>
+              <td>
+                <img
+                  height="100px"
+                  width="100px"
+                  src="https://th.bing.com/th/id/OIP.ytInAlGTqKXWB-sdWCsk-AHaJQ?pid=ImgDet&rs=1"
+                  alt=""
+                />
+              </td>
+              <td>
+                <img
+                  height="100px"
+                  width="100px"
+                  src="https://user-images.githubusercontent.com/78701055/165722571-47ea42bf-d9ea-4c80-bcc8-b8947c829673.png"
+                  alt=""
+                />
+              </td>
+              <td>
+                <img
+                  height="100px"
+                  width="100px"
+                  src="https://user-images.githubusercontent.com/78701055/165722579-5a57fc60-37b1-4fae-9606-eb36b6851a13.jpg"
+                  alt=""
+                />
+              </td>
+            </tr>
+            <tr style="font-size: small">
+              <td>Raspi Zero 2w</td>
+              <td>Gas Sensors</td>
+              <td>12V battery</td>
+              <td>12V to 5v converter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br />
+      <!-- <h3><b>Final Circuit:</b></h3>
+      <hr />
+      <img
+        style="max-width: 800px; width: 80vw"
+        src="https://user-images.githubusercontent.com/78701055/165721822-8ce9857e-6f89-431b-96a5-bb17adb5e330.jpeg"
+      /> -->
+    </div>
+    <div class="col-sm" style="margin-top: 50px">
+      <div
+        id="profile-doc"
+        class="card sticky-top"
+        style="top: 100px; border: none"
+      >
+        <h1 id="profile">
+          PROFILE
+          <a href="edit"
+            ><i class="bx bx-edit nav_icon" style="font-size: 0.9em"></i
+          ></a>
+        </h1>
+        <hr />
+        <div class="profileContainer">
+          <ul style="list-style-type: none">
+            <li>
+              <h4 id="profile-user-name" style="font-weight: 600">
+                Name : {{name}}
+              </h4>
+            </li>
+            <li>
+              <h4 id="profile-user-username">Username: {{username}}</h4>
+            </li>
+            <li>
+              <h4 id="profile-email">Email: {{email}}</h4>
+            </li>
+            <li>
+              <h4 id="profile-devies">Devices: {{devices}}</h4>
+            </li>
+            <li>
+              <button
+                class="btn btn-primary btn-rounded mt-2"
+                onclick="add_device()"
+                style="width: 190px; text-align: center"
+              >
+                Add New Device
+              </button>
+              <a href="devices">
+                <button
+                  class="btn btn-outline-primary btn-rounded mt-2"
+                  style="width: 190px; text-align: center"
+                >
+                  View All Devices
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a
+      class="btn btn-primary btn-rounded mt-2"
+      href="#profile-doc"
+      id="show-btn"
+      style="
+        width: max-content;
+        font-size: small;
+        text-align: center;
+        position: fixed;
+        bottom: 50px;
+        right: 5px;
+      "
+    >
+      &#8595; Profile
+    </a>
+  </div>
+  <script>
+    function add_device() {
+      id = prompt("Enter Device ID");
+      if (id != null) {
+        window.location.href = "add_device/" + id;
+      }
+    }
+  </script>
+</div>
+{% endblock content%}
