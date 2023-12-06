@@ -80,9 +80,9 @@
                 // }
                 labels.push([i])
             }
-            if(fault=="0"): document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "No Fault"
-            else if(fault=="1"): if(fault==0): document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "Sensor 1 "
-            else if(fault=="2"): if(fault==0): document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "Sensor 2 "
+            if(fault=="0") document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "No Fault";
+            else if(fault=="1") document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "Sensor 1 ";
+            else if(fault=="2") document.getElementById(dvc).innerHTML = document.getElementById(dvc).innerHTML + "Sensor 2 ";
             var ctxL = document.getElementById("lineChart-" + dvc).getContext('2d');
             var myLineChart = new Chart(ctxL, {
                 type: 'line',
