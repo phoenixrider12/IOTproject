@@ -14,6 +14,7 @@ class Device(models.Model):
     )
     device_id=models.CharField(max_length=100)
     manual_mode=models.BooleanField(default=False)
+    faulty_node=models.IntegerField(default=0)
     gas_sensor=ArrayField(
                 models.FloatField(),
                 blank=True,
