@@ -23,7 +23,8 @@ def new_data(request, id, m):
 
 @csrf_exempt
 def turn_on_alert(request, id, fn):
-    device = get_object_or_404(Device, device_id=id, faulty_node=fn)
+    device = get_object_or_404(Device, device_id=id)
+    device.faulty_node=fn
     device.manual_mode=(fn!=0)
     device.save()
     return JsonResponse({'status':'ok'})
